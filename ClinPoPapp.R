@@ -36,6 +36,7 @@ top_rsIDs <- frequencies_sex %>%
 frequencies_top10 <- frequencies_sex %>%
   filter(rsID %in% top_rsIDs)
 
+'''
 # Define UI
 ui <- dashboardPage(
   skin = "black",
@@ -234,3 +235,4 @@ server <- function(input, output) {
 
 # Run app
 shinyApp(ui = ui, server = server)
+'''

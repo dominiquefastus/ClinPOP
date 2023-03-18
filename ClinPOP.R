@@ -42,7 +42,7 @@ rsid_match <- bim[rsid_match,] %>%
   rename("rsID" = V2) %>%
   filter(str_detect(rsID, "rs"))
 
-write.table(rsid_match$rsID,file = "/Users/dominiquefastus/ClinPop/rsIDs_input/rsID_data_public.txt",
+write.table(rsid_match$rsID,file = "/Users/dominiquefastus/ClinPop/rsID_data/rsID_data_public.txt",
             row.names = FALSE, quote = FALSE)
 
 rs_ids <- read.csv('/Users/dominiquefastus/ClinPop/rsID_data/Data_rs_ids.txt',
@@ -50,7 +50,7 @@ rs_ids <- read.csv('/Users/dominiquefastus/ClinPop/rsID_data/Data_rs_ids.txt',
 
 # get only the rsid contained in the bim file and create a file, only containing the
 # pathogenic or likely pathogenic ones
-msid_match <- rs_ids[,1] %in% populations[,1]
+msid_match <- populations[,1] %in% rs_ids[,1]
 msid_match <- rs_ids[msid_match,] %>% 
   rename("MasterID" = V1, "rsID" = V2)
 
@@ -63,10 +63,6 @@ write.table(populations, file = "/Users/dominiquefastus/ClinPop/populations_read
 # also write the clinvar table only for interested columns and the found markers
 found_clinvar <- select(clinvar, Type,  ClinicalSignificance,
                         rsID, PhenotypeList) 
-
-# Name, GeneID, GeneSymbol, HGNC_ID, Assembly, ChromosomeAccession,
-# Chromosome, Start, Stop, OtherIDs, VariationID, PositionVCF,
-# ReferenceAlleleVCF, AlternateAlleleVCF, RCVaccession, PhenotypeIDS
 
 unique_rsids <- unique(select(msid_match, rsID))
 clinvar_table <- merge(unique_rsids, found_clinvar, by = "rsID")
