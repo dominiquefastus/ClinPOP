@@ -1,1 +1,2 @@
-# ClinPOP
+# ![ClinPOP logo](clinpop_logo.png)
+

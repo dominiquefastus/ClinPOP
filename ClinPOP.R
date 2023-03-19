@@ -1,23 +1,22 @@
+rm(list = ls())
+
 # load required packaged
 library(tidyverse)
 library(openxlsx)
-library(countrycode)
 
-rm(list = ls())
 # read the data and retrive clinvar marker information from database
                     
 populations <- read.xlsx('/Users/dominiquefastus/ClinPop/raw_data/Eurasian - Dataset_tims.xlsx',
-                         sheet = "Eurasian", cols = c(13,19,25:27,33))
+                         sheet = "Eurasian", cols = c(13,19,25,33))
 
-# assign countries to continent regions to group them into populations
-egnations <- populations$Country
-populations$Country <- countrycode(sourcevar = egnations, origin = "country.name",
-                                  destination = "region")
+countries <- read.csv('/Users/dominiquefastus/ClinPop/countries.txt', sep = '\t')
+
+populations <- merge(populations, countries, by = "Country") 
 
 populations <- populations %>%
-  rename("MasterID" = 1,
-         "Time" = 2) #  time in BP in Years before 1950 CE
+  rename("MasterID" = 2, "Time" = 3)
 
+populations <-select(populations, MasterID, Time, Sex, Continent)
 
 # read and prepare the clinvar data
 clinvar <- read.csv('/Users/dominiquefastus/ClinPop/raw_data/variant_summary.txt', 
@@ -25,8 +24,7 @@ clinvar <- read.csv('/Users/dominiquefastus/ClinPop/raw_data/variant_summary.txt
 
 # filter the clinvar data with un
 clinvar <- clinvar %>%
-                    filter(ClinicalSignificance == "Pathogenic" |
-                           ClinicalSignificance == "Likely Pathogenic",
+                    filter(ClinicalSignificance == "Pathogenic",
                            RS...dbSNP. != -1) %>%
                     rename("rsID" = RS...dbSNP.)
 
@@ -50,12 +48,12 @@ rs_ids <- read.csv('/Users/dominiquefastus/ClinPop/rsID_data/Data_rs_ids.txt',
 
 # get only the rsid contained in the bim file and create a file, only containing the
 # pathogenic or likely pathogenic ones
-msid_match <- populations[,1] %in% rs_ids[,1]
+msid_match <- rs_ids[,1] %in% populations[,1]
 msid_match <- rs_ids[msid_match,] %>% 
   rename("MasterID" = V1, "rsID" = V2)
 
 populations <- merge(populations,msid_match,by = "MasterID")
-populations <- select(populations, MasterID, Time, Country, Sex, rsID)
+populations <- select(populations, MasterID, Time, Continent, Sex, rsID)
 
 write.table(populations, file = "/Users/dominiquefastus/ClinPop/populations_readin.txt",
             sep = "\t", row.names = FALSE, quote = FALSE)

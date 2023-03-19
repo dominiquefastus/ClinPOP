@@ -1,0 +1,250 @@
+Country	Continent
+Afghanistan	Southern Asia 
+Åland Islands	Northern Europe 
+Albania	Southern Europe 
+Algeria	Northern Africa 
+American Samoa	Polynesia 
+Andorra	Southern Europe 
+Angola	Middle Africa Sub-Saharan Africa
+Anguilla	Caribbean Latin America and the Caribbean
+Antarctica	Antarctica 
+Antigua and Barbuda	Caribbean Latin America and the Caribbean
+Argentina	South America Latin America and the Caribbean
+Armenia	Western Asia 
+Aruba	Caribbean Latin America and the Caribbean
+Australia	Australia and New Zealand 
+Austria	Western Europe 
+Azerbaijan	Western Asia 
+Bahamas	Caribbean Latin America and the Caribbean
+Bahrain	Western Asia 
+Bangladesh	Southern Asia 
+Barbados	Caribbean Latin America and the Caribbean
+Belarus	Eastern Europe 
+Belgium	Western Europe 
+Belize	Central America Latin America and the Caribbean
+Benin	Western Africa Sub-Saharan Africa
+Bermuda	Northern America 
+Bhutan	Southern Asia 
+Bolivia (Plurinational State of)	South America Latin America and the Caribbean
+Bonaire, Sint Eustatius and Saba	Caribbean Latin America and the Caribbean
+Bosnia and Herzegovina	Southern Europe 
+Botswana	Southern Africa Sub-Saharan Africa
+Bouvet Island	South America Latin America and the Caribbean
+Brazil	South America Latin America and the Caribbean
+British Indian Ocean Territory	Eastern Africa Sub-Saharan Africa
+British Virgin Islands	Caribbean Latin America and the Caribbean
+Brunei Darussalam	South-eastern Asia 
+Bulgaria	Eastern Europe 
+Burkina Faso	Western Africa Sub-Saharan Africa
+Burundi	Eastern Africa Sub-Saharan Africa
+Cabo Verde	Western Africa Sub-Saharan Africa
+Cambodia	South-eastern Asia 
+Cameroon	Middle Africa Sub-Saharan Africa
+Canada	Northern America 
+Cayman Islands	Caribbean Latin America and the Caribbean
+Central African Republic	Middle Africa Sub-Saharan Africa
+Chad	Middle Africa Sub-Saharan Africa
+Chile	South America Latin America and the Caribbean
+China	Eastern Asia 
+China, Hong Kong Special Administrative Region	Eastern Asia 
+China, Macao Special Administrative Region	Eastern Asia 
+Christmas Island	Australia and New Zealand 
+Cocos (Keeling) Islands	Australia and New Zealand 
+Colombia	South America Latin America and the Caribbean
+Comoros	Eastern Africa Sub-Saharan Africa
+Congo	Middle Africa Sub-Saharan Africa
+Cook Islands	Polynesia 
+Costa Rica	Central America Latin America and the Caribbean
+Côte d’Ivoire	Western Africa Sub-Saharan Africa
+Croatia	Southern Europe 
+Cuba	Caribbean Latin America and the Caribbean
+Curaçao	Caribbean Latin America and the Caribbean
+Cyprus	Western Asia 
+Czechia	Eastern Europe 
+Democratic People's Republic of Korea	Eastern Asia 
+Democratic Republic of the Congo	Middle Africa Sub-Saharan Africa
+Denmark	Northern Europe 
+Djibouti	Eastern Africa Sub-Saharan Africa
+Dominica	Caribbean Latin America and the Caribbean
+Dominican Republic	Caribbean Latin America and the Caribbean
+Ecuador	South America Latin America and the Caribbean
+Egypt	Northern Africa 
+El Salvador	Central America Latin America and the Caribbean
+Equatorial Guinea	Middle Africa Sub-Saharan Africa
+Eritrea	Eastern Africa Sub-Saharan Africa
+Estonia	Northern Europe 
+Eswatini	Southern Africa Sub-Saharan Africa
+Ethiopia	Eastern Africa Sub-Saharan Africa
+Falkland Islands (Malvinas)	South America Latin America and the Caribbean
+Faroe Islands	Northern Europe 
+Fiji	Melanesia 
+Finland	Northern Europe 
+France	Western Europe 
+French Guiana	South America Latin America and the Caribbean
+French Polynesia	Polynesia 
+French Southern Territories	Eastern Africa Sub-Saharan Africa
+Gabon	Middle Africa Sub-Saharan Africa
+Gambia	Western Africa Sub-Saharan Africa
+Georgia	Western Asia 
+Germany	Western Europe 
+Ghana	Western Africa Sub-Saharan Africa
+Gibraltar	Southern Europe 
+Greece	Southern Europe 
+Greenland	Northern America 
+Grenada	Caribbean Latin America and the Caribbean
+Guadeloupe	Caribbean Latin America and the Caribbean
+Guam	Micronesia 
+Guatemala	Central America Latin America and the Caribbean
+Guernsey	Northern Europe Channel Islands
+Guinea	Western Africa Sub-Saharan Africa
+Guinea-Bissau	Western Africa Sub-Saharan Africa
+Guyana	South America Latin America and the Caribbean
+Haiti	Caribbean Latin America and the Caribbean
+Heard Island and McDonald Islands	Australia and New Zealand 
+Holy See	Southern Europe 
+Honduras	Central America Latin America and the Caribbean
+Hungary	Eastern Europe 
+Iceland	Northern Europe 
+India	Southern Asia 
+Indonesia	South-eastern Asia 
+Iran	Southern Asia 
+Iraq	Western Asia 
+Ireland	Northern Europe 
+Isle of Man	Northern Europe 
+Israel	Western Asia 
+Italy	Southern Europe 
+Jamaica	Caribbean Latin America and the Caribbean
+Japan	Eastern Asia 
+Jersey	Northern Europe Channel Islands
+Jordan	Western Asia 
+Kazakhstan	Central Asia 
+Kenya	Eastern Africa Sub-Saharan Africa
+Kiribati	Micronesia 
+Kuwait	Western Asia 
+Kyrgyzstan	Central Asia 
+Lao People's Democratic Republic	South-eastern Asia 
+Latvia	Northern Europe 
+Lebanon	Western Asia 
+Lesotho	Southern Africa Sub-Saharan Africa
+Liberia	Western Africa Sub-Saharan Africa
+Libya	Northern Africa 
+Liechtenstein	Western Europe 
+Lithuania	Northern Europe 
+Luxembourg	Western Europe 
+Madagascar	Eastern Africa Sub-Saharan Africa
+Malawi	Eastern Africa Sub-Saharan Africa
+Malaysia	South-eastern Asia 
+Maldives	Southern Asia 
+Mali	Western Africa Sub-Saharan Africa
+Malta	Southern Europe 
+Marshall Islands	Micronesia 
+Martinique	Caribbean Latin America and the Caribbean
+Mauritania	Western Africa Sub-Saharan Africa
+Mauritius	Eastern Africa Sub-Saharan Africa
+Mayotte	Eastern Africa Sub-Saharan Africa
+Mexico	Central America Latin America and the Caribbean
+Micronesia (Federated States of)	Micronesia 
+Monaco	Western Europe 
+Mongolia	Eastern Asia 
+Montenegro	Southern Europe 
+Montserrat	Caribbean Latin America and the Caribbean
+Morocco	Northern Africa 
+Mozambique	Eastern Africa Sub-Saharan Africa
+Myanmar	South-eastern Asia 
+Namibia	Southern Africa Sub-Saharan Africa
+Nauru	Micronesia 
+Nepal	Southern Asia 
+Netherlands	Western Europe 
+New Caledonia	Melanesia 
+New Zealand	Australia and New Zealand 
+Nicaragua	Central America Latin America and the Caribbean
+Niger	Western Africa Sub-Saharan Africa
+Nigeria	Western Africa Sub-Saharan Africa
+Niue	Polynesia 
+Norfolk Island	Australia and New Zealand 
+North Macedonia	Southern Europe 
+Northern Mariana Islands	Micronesia 
+Norway	Northern Europe 
+Oman	Western Asia 
+Pakistan	Southern Asia 
+Palau	Micronesia 
+Panama	Central America Latin America and the Caribbean
+Papua New Guinea	Melanesia 
+Paraguay	South America Latin America and the Caribbean
+Peru	South America Latin America and the Caribbean
+Philippines	South-eastern Asia 
+Pitcairn	Polynesia 
+Poland	Eastern Europe 
+Portugal	Southern Europe 
+Puerto Rico	Caribbean Latin America and the Caribbean
+Qatar	Western Asia 
+Republic of Korea	Eastern Asia 
+Republic of Moldova	Eastern Europe 
+Réunion	Eastern Africa Sub-Saharan Africa
+Romania	Eastern Europe 
+Russian Federation	Eastern Europe 
+Rwanda	Eastern Africa Sub-Saharan Africa
+Saint Barthélemy	Caribbean Latin America and the Caribbean
+Saint Helena	Western Africa Sub-Saharan Africa
+Saint Kitts and Nevis	Caribbean Latin America and the Caribbean
+Saint Lucia	Caribbean Latin America and the Caribbean
+Saint Martin (French Part)	Caribbean Latin America and the Caribbean
+Saint Pierre and Miquelon	Northern America 
+Saint Vincent and the Grenadines	Caribbean Latin America and the Caribbean
+Samoa	Polynesia 
+San Marino	Southern Europe 
+Sao Tome and Principe	Middle Africa Sub-Saharan Africa
+Sark	Northern Europe Channel Islands
+Saudi Arabia	Western Asia 
+Senegal	Western Africa Sub-Saharan Africa
+Serbia	Southern Europe 
+Seychelles	Eastern Africa Sub-Saharan Africa
+Sierra Leone	Western Africa Sub-Saharan Africa
+Singapore	South-eastern Asia 
+Sint Maarten (Dutch part)	Caribbean Latin America and the Caribbean
+Slovakia	Eastern Europe 
+Slovenia	Southern Europe 
+Solomon Islands	Melanesia 
+Somalia	Eastern Africa Sub-Saharan Africa
+South Africa	Southern Africa Sub-Saharan Africa
+South Georgia and the South Sandwich Islands	South America Latin America and the Caribbean
+South Sudan	Eastern Africa Sub-Saharan Africa
+Spain	Southern Europe 
+Sri Lanka	Southern Asia 
+State of Palestine	Western Asia 
+Sudan	Northern Africa 
+Suriname	South America Latin America and the Caribbean
+Svalbard and Jan Mayen Islands	Northern Europe 
+Sweden	Northern Europe 
+Switzerland	Western Europe 
+Syrian Arab Republic	Western Asia 
+Tajikistan	Central Asia 
+Thailand	South-eastern Asia 
+Timor-Leste	South-eastern Asia 
+Togo	Western Africa Sub-Saharan Africa
+Tokelau	Polynesia 
+Tonga	Polynesia 
+Trinidad and Tobago	Caribbean Latin America and the Caribbean
+Tunisia	Northern Africa 
+Turkey	Western Asia 
+Turkmenistan	Central Asia 
+Turks and Caicos Islands	Caribbean Latin America and the Caribbean
+Tuvalu	Polynesia 
+Uganda	Eastern Africa Sub-Saharan Africa
+Ukraine	Eastern Europe 
+United Arab Emirates	Western Asia 
+United Kingdom of Great Britain and Northern Ireland	Northern Europe 
+United Republic of Tanzania	Eastern Africa Sub-Saharan Africa
+United States Minor Outlying Islands	Micronesia 
+United States of America	Northern America 
+United States Virgin Islands	Caribbean Latin America and the Caribbean
+Uruguay	South America Latin America and the Caribbean
+Uzbekistan	Central Asia 
+Vanuatu	Melanesia 
+Venezuela (Bolivarian Republic of)	South America Latin America and the Caribbean
+Viet Nam	South-eastern Asia 
+Wallis	Polynesia 
+Western	Northern Africa 
+Yemen	Western Asia 
+Zambia	Eastern Africa Sub-Saharan Africa
+Zimbabwe	Eastern Africa Sub-Saharan Africa

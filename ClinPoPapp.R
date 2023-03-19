@@ -13,17 +13,17 @@ population_plot <- read.csv('/Users/dominiquefastus/ClinPop/populations_readin.t
 clinvar_table <- read.csv('/Users/dominiquefastus/ClinPop/clinvar.txt',
                           sep = "\t")
 
-# Group by country and rsID, calculate frequencies every 1000 years
+# Group by Continent and rsID, calculate frequencies every 1000 years
 frequencies <- population_plot %>%
-  group_by(Country, rsID, Time %/% 1000) %>%
+  group_by(Continent, rsID, Time %/% 1000) %>%
   summarize(Frequency = n()) %>%
   ungroup() %>%
   rename('Year' = `Time%/%1000`)
 
-# Group the data by country, sex, and rsID, and calculate the frequencies
+# Group the data by Continent, sex, and rsID, and calculate the frequencies
 frequencies_sex <- population_plot %>%
   filter(Sex != "U") %>%
-  group_by(Country, Sex, rsID) %>%
+  group_by(Continent, Sex, rsID) %>%
   summarize(Frequency = n()) %>%
   ungroup()
 
@@ -36,7 +36,6 @@ top_rsIDs <- frequencies_sex %>%
 frequencies_top10 <- frequencies_sex %>%
   filter(rsID %in% top_rsIDs)
 
-'''
 # Define UI
 ui <- dashboardPage(
   skin = "black",
@@ -58,15 +57,15 @@ ui <- dashboardPage(
     
     # selection option for populations
     selectInput("Populations", "Select Population:",
-                choices = c("Europe & Asia", unique(population_plot$Country))),
+                choices = c("Europe & Asia", unique(population_plot$Continent))),
     
     sliderInput("range", "Time to show frequencies:",
                 min = 0, max = 9,
                 step = 1, # set step size to 1
                 value = c(0,1)*1000), # set initial value in 1000s
     
-    div(style="display:inline-block; align-items: normal;",actionButton("action", label = "Apply")),
-    div(style="display:inline-block; align-items: normal;",downloadButton("downloadPDF", label = "Download plot as PDF")),
+    # div(style="display:inline-block; align-items: normal;",actionButton("action", label = "Apply")),
+    # div(style="display:inline-block; align-items: normal;", downloadButton("downloadPDF", label = "Download plot as PDF")),
     
     # Center the text in the middle of the sidebar
     tags$style(".sidebar {display: flex; flex-direction: column; justify-content: center; align-items: center;}"),
@@ -100,7 +99,7 @@ ui <- dashboardPage(
     fluidRow(
       box(
         width = 12,
-        height = 560,
+        height = 480,
         title = "Frequency of rsIDs in populations every 1000 years",
         plotlyOutput("line_plot")),
   
@@ -114,6 +113,7 @@ ui <- dashboardPage(
       ),
       
       box(
+        height = 76,
         textOutput("text")
       )
     )
@@ -126,27 +126,28 @@ server <- function(input, output) {
   # Filter the population data based on user inputs
   filtered_data <- reactive({
     frequencies %>%
-      filter(rsID == input$ClinVAR_marker, Country == input$Populations,
+      filter(rsID == input$ClinVAR_marker, Continent == input$Populations,
              Year >= input$range[1] & Year <= input$range[2])
   })
   
   # Create an interactive plot of the frequencies
   line_plot <- ggplot(frequencies, aes(x = Year, y = Frequency, color = rsID)) +
     geom_line() +
-    facet_wrap(~Country, nrow = 3) +
+    facet_wrap(~Continent, nrow = 3) +
     # scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
     labs(x = "Year",
          y = "Frequency") +
     theme_bw()
   
-  # Create a stacked barplot showing the frequencies of each rsID in each country, separated by sex
-  bar_plot <- ggplot(frequencies_top10, aes(x = Country, y = Frequency, fill = rsID)) +
+  # Create a stacked barplot showing the frequencies of each rsID in each Continent, separated by sex
+  bar_plot <- ggplot(frequencies_top10, aes(x = Continent, y = Frequency, fill = rsID)) +
     geom_col(position = "dodge", color = "white") +
     facet_wrap(~Sex, ncol = 2) +
     coord_flip() + 
-    scale_x_discrete(labels= c("S. Asia", "ME. & N. Africa", "Europe & C. Asia", "E. Asia & Pacifc")) +
+    scale_x_discrete(labels= c("W. Europe", "W. Asia", "S. Europe", "S. Asia", "S.E. Asia",
+                               "N. Europe", "E. Europe", "E. Asia", "C. Asia")) +
     scale_fill_brewer(palette = 4) +
-    labs(x = "Country",
+    labs(x = "Continent",
          y = "Frequency") +
     theme_bw()
   
@@ -167,7 +168,7 @@ server <- function(input, output) {
     } 
     else {
       filtered_data() %>%
-        plot_ly(x = ~Year, y = ~Frequency, color = ~Country, type = 'scatter', mode = 'lines+markers') %>%
+        plot_ly(x = ~Year, y = ~Frequency, color = ~Continent, type = 'scatter', mode = 'lines+markers') %>%
         layout(title = paste("Frequency of", input$ClinVAR_marker, "in", input$Populations, "over time"),
                xaxis = list(title = "Year"), yaxis = list(title = "Frequency"))
     }
@@ -180,7 +181,7 @@ server <- function(input, output) {
   } 
     else {
       frequencies_sex %>%
-        filter(rsID %in% top_rsIDs, Country == input$Populations) %>%
+        filter(rsID %in% top_rsIDs, Continent == input$Populations) %>%
         plot_ly(x = ~Frequency, y = ~rsID, color = ~Sex, type = 'bar', orientation = 'h') %>%
         layout( xaxis = list(title = "Frequency", tickangle = 0), yaxis = list(title = "rsID"),
                margin = list(l = 100, r = 20, t = 50, b = 50),
@@ -206,33 +207,8 @@ server <- function(input, output) {
     paste("You have selected", input$ClinVAR_marker, "in", input$Populations,
           "from time", input$range[1], "to", input$range[2], "bp")
   })
-  
-  # Download plot as PDF
-  output$downloadPDF <- downloadHandler(
-    filename = function() {
-      paste("ClinPOP_", input$Populations, input$ClinVAR_marker, ".pdf", sep = "")
-    },
-    content = function(file) {
-      pdf(file)
-      if (!is.null(filtered_data())) {
-        filtered_data() %>%
-          group_by(Country, rsID, Time %/% 1000) %>%
-          summarize(Frequency = n()) %>%
-          ungroup() %>%
-          rename('Year' = `Time%/%1000`) %>%
-          plot_ly(x = ~Year, y = ~Frequency, color = ~Country, type = 'scatter', mode = 'lines+markers') %>%
-          layout(title = paste("Frequency of", input$ClinVAR_marker, "in", input$Populations, "over time"),
-                 xaxis = list(title = "Year"), yaxis = list(title = "Frequency"))
-      } else {
-        plot_ly() %>%
-          layout(title = "No data available for selected inputs")
-      }
-      dev.off()
-    }
-  )
 }
 
 
 # Run app
 shinyApp(ui = ui, server = server)
-'''
