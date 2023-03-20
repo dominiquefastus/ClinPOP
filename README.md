@@ -38,7 +38,7 @@ The ClinVAR marker information or variant summary of the NCBI database can be do
 wget https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz
 ```
 
-To prepare the data follow the steps in the ClinPOPsetup.R script.
+To prepare the data follow the steps in the `ClinPOPsetup.R` script.
 
 
 ### Run application

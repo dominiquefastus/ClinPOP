@@ -70,7 +70,7 @@ ui <- dashboardPage(
                 choices = c("Europe & Asia", unique(population_plot$Continent))),
     
     # slider option to select the time range to plot
-    sliderInput("range", "Time to show frequencies:",
+    sliderInput("range", "Time to show frequencies (in 1000 bp):",
                 min = 0, max = 9,
                 step = 1, # set step size to 1
                 value = c(0,1)*1000), # set initial value in 1000s
@@ -147,7 +147,7 @@ server <- function(input, output) {
   })
   
   # Create an interactive plot of the frequencies over time in years bp
-  line_plot <- ggplot(frequencies, aes(x = Year, y = Frequency, color = rsID)) +
+  line_plot <- ggplot(frequencies, aes(x = Year*1000, y = Frequency, color = rsID)) +
     geom_line() +
     facet_wrap(~Continent, nrow = 3) +
     # scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
@@ -187,7 +187,7 @@ server <- function(input, output) {
     } 
     else {
       filtered_data() %>%
-        plot_ly(x = ~Year, y = ~Frequency, color = ~Continent, type = 'scatter', mode = 'lines+markers') %>%
+        plot_ly(x = ~Year*1000, y = ~Frequency, color = ~Continent, type = 'scatter', mode = 'lines+markers') %>%
         layout(title = paste("Frequency of", input$ClinVAR_marker, "in", input$Populations, "over time"),
                xaxis = list(title = "Year"), yaxis = list(title = "Frequency"))
     }
