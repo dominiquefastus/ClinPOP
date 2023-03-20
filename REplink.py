@@ -12,7 +12,7 @@ parser.add_argument('--output', '-o', metavar='output_file', type=str, default='
 # parse command line arguments
 args = parser.parse_args()
 
-# reformat input file into tab-separated output file
+# reformat input file into tab-separated output file, like rsID_data_public.txt
 if args.lgen:
     with open(args.lgen, 'r') as infile, open(args.output, 'w') as outfile:
         for line in infile:
@@ -26,7 +26,7 @@ if args.lgen:
     ----------------------------------------------------------------
     ''')
 
-# print all rsIDs in the standard output for snp identifiers filtering
+# print all rsIDs in the standard output for snp identifiers filtering, like rsID_data_public.txt
 if args.rsID:
     rs_ids = []
 
