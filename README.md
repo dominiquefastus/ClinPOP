@@ -42,4 +42,4 @@ To prepare the data follow the steps in the `ClinPOPsetup.R` script.
 
 
 ### Run application
-To run the application open `ClinPOPapp.R`in R studio and install necessary packages and open the webb application in your browser from the viewer panel.
+To run the application open `ClinPOPapp.R`in R studio and install necessary packages and open the web application in your browser from the viewer panel.
